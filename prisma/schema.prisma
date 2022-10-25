@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = "postgres://akrrwkef:huuZzzj5W6X8CBJLqD93UC0s2dqzpFiF@motty.db.elephantsql.com/akrrwkef"
 }
 
 model Restaurante {
