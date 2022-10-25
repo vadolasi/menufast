@@ -1,0 +1,304 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--primary);
+  flex-direction: column;
+}
+
+.main.row {
+  flex-direction: row;
+}
+
+body.bg-secondary {
+  background: #512194 !important;
+}
+
+h1.main-title {
+  color: var(--white);
+  font-size: 6rem;
+  line-height: 1;
+}
+
+h1.title {
+  color: var(--white);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.button {
+  width: 264px;
+  padding: 20px;
+  border-radius: 56px;
+  font-weight: bold;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 1.125rem;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.button.secondary {
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.button.save {
+  margin-top: 2em;
+}
+
+button:nth-child(2) {
+  margin-top: 16px;
+}
+
+.right-container {
+  position: relative;
+  display: flex;
+  width: 50vw;
+  height: 100%;
+}
+
+.right-container img.logo {
+  width: 90px;
+  height: 31px;
+  position: absolute;
+  right: 0;
+  top: 64px;
+}
+
+.hex-orange-container {
+  position: absolute;
+  z-index: 10;
+  left: 248px;
+  top: 128px;
+}
+
+.hex-orange-container div:nth-child(2) {
+  position: absolute;
+  z-index: 10;
+  right: -4px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hex-orange-container div:nth-child(2) strong {
+  color: var(--white);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 16px;
+}
+
+.hex-orange-container div:nth-child(2) img {
+  height: 200px;
+  width: 200px;
+}
+
+.hex-white-container {
+  position: absolute;
+  left: 428px;
+  bottom: 200px;
+}
+
+.hex-white-container img {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  height: 160px;
+  width: 160px;
+}
+
+.hex {
+  position: relative;
+  margin: 1em auto;
+  width: 12em;
+  height: 20.78em;
+  border-radius: 1em/.5em;
+  transition: opacity .5s;
+}
+
+.hex-orange {
+  background: var(--orange);
+  transform: rotate(-4deg);
+}
+
+.hex-white {
+  background: var(--white);
+}
+
+.hex:before,
+.hex:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: '';
+}
+
+.hex:before {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.hex:after {
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+.cardapio-header {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
+
+.input {
+  margin-top: 1.5em;
+  padding: 0.75em;
+  text-align: center;
+  border-radius: 0.25em;
+  font-size: 1.5rem;
+  font-family: var(--font);
+  font-weight: bold;
+  border: 0;
+  width: 90%;
+}
+
+.table {
+  margin: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: orange;
+  border-radius: 10px;
+}
+
+.table tr {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.table th {
+  padding: 10px;
+  border-bottom: 2px solid white;
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 2px solid white;
+}
+
+.table td+td {
+  border-left: 2px solid white;
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #512194;
+}
+
+.menu>ul {
+  margin-left: 150px;
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  padding: 16px 16px 0px 16px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu .selected > a {
+  background-color: var(--primary);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.cardapio-menu>ul {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.cardapio-menu>ul>li {
+  padding: 15px;
+}
+
+.cardapio-menu>ul>li.active {
+  color: var(--red);
+}
+
+.container-cardapio {
+  background-color: #da3522;
+  padding: 100px;
+}
+
+.cardapio {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #5d0001;
+  padding: 50px;
+  border-radius: 25px;
+  flex-shrink: initial;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  color: white;
+}
+
+.dots {
+  border-bottom: 2px dotted white;
+  width: 100%;
+  height: 1rem;
+}
+
+span.price {
+  background-color: #3d0e0e;
+  padding: 10px;
+  border-radius: 10px;
+  max-height: 18px;
+}
+
+.rs {
+  color: white;
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+
+.obs {
+  font-size: 0.75em;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+}

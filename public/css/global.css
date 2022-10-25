@@ -1,0 +1,38 @@
+:root {
+  --primary: #762fcf;
+  --secondary: #512194;
+  --white: #ffffff;
+  --black: #000000;
+  --orange: #f44926;
+  --red: #da3522;
+  --black-red: #5d0001;
+
+  --font: 'Ubuntu', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html,
+body {
+  font-family: var(--font) !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-x: none;
+  position: relative;
+}
+
+button {
+  border: 0;
+}

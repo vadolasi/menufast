@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurante {
+  id           Int    @id @default(autoincrement())
+  subdominio   String @unique
+  email        String
+  nome         String
+  cnpj         String
+  mesas        Mesa[]
+  categorias   Categoria[]
+  funcionarios Funcionario[]
+}
+
+model Funcionario {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  email String @unique
+  senha String
+  cargo String
+  restaurate    Restaurante @relation(fields: [restauranteId], references: [id])
+  restauranteId Int
+}
+
+model Categoria {
+  id            Int @id @default(autoincrement())
+  nome          String
+  subCategorias Subcategoria[]
+  restaurate    Restaurante @relation(fields: [restauranteId], references: [id])
+  restauranteId Int
+}
+
+model Subcategoria {
+  id          Int @id @default(autoincrement())
+  nome        String
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+  categoriaId Int
+  items       Produto[]
+}
+
+model Produto {
+  id             Int @id @default(autoincrement())
+  nome           String
+  observacao     String?
+  preco          Float
+  subCategoria   Subcategoria @relation(fields: [subCategoriaId], references: [id])
+  subCategoriaId Int
+  pedidos        ProdutoPedido[]
+}
+
+model Mesa {
+  id            Int @id @default(autoincrement())
+  numero        Int
+  restaurante   Restaurante @relation(fields: [restauranteId], references: [id])
+  restauranteId Int
+  pedidos       Pedido[]
+}
+
+model Pedido {
+  id       Int @id @default(autoincrement())
+  produtos ProdutoPedido[]
+  mesa     Mesa @relation(fields: [mesaId], references: [id])
+  mesaId   Int
+  pronto   Boolean
+}
+
+model ProdutoPedido {
+  id         Int @id @default(autoincrement())
+  quantidade Int
+  produto    Produto @relation(fields: [produtoId], references: [id])
+  produtoId  Int
+  pedido     Pedido @relation(fields: [pedidoId], references: [id])
+  pedidoId   Int
+}

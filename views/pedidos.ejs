@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menufast</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="/pedidos">Pedidos</a></li>
+        <li class="selected"><a href="/empresa">Funcionários</a></li>
+        <li><a href="/cardapio">Cardápio</a></li>
+        <li><a href="/mesas">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="main">
+    <div style="display: flex; flex-direction: column; align-items: center; position: fixed; z-index: 1;">
+      <h1 class="title">Funcionários</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% funcionarios.forEach(funcionario => { %>
+            <tr>
+              <td><%= funcionario.nome %></td>
+              <td><%= funcionario.cargo %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <a class="button save" href="/cadastro_funcionario">Adicionar</a>
+    </div>
+      </div>
+  </body>
+</html>
